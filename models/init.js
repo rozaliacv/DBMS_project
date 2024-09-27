@@ -1,4 +1,4 @@
-import createUsersTable from "./users/init";
+import createUsersTable from "./users/init.js";
 
 const initDatabase = async() => {
     await createUsersTable();
