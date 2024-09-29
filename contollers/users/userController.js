@@ -11,7 +11,7 @@ export const getAllUsers = async(req,res,next) => {
 
 export const getUser = async(req,res,next) => {
     try{
-        const user = await users.get(req.params.uid);
+        const user = await users.get(req.params.id);
         res.json(user);
     } catch(error) {
         next(error);
@@ -22,7 +22,7 @@ export const addNewUser = async(req,res,next) => {
     try {
         const newUser =  req.body ;
         await users.add(newUser);
-        const addedUser = await users.get(newUser.uid);
+        const addedUser = await users.get(newUser.id);
         res
             .status(201)
             .json({message: "user created", addedUser});
@@ -33,8 +33,8 @@ export const addNewUser = async(req,res,next) => {
 
 export const updateUser = async (req,res,next) => {
     try {
-        await users.update(req.params.uid , req.body);
-        const updatedUser = await users.get(req.params.uid);
+        await users.update(req.params.id , req.body);
+        const updatedUser = await users.get(req.params.id);
         res.json({message: "user updated", updatedUser});
     } catch(error) {
         next(error);
@@ -43,7 +43,7 @@ export const updateUser = async (req,res,next) => {
 
 export const deleteUser = async(res,req,next) => {
     try{
-        await users.remove(req.params.uid);
+        await users.remove(req.params.id);
         res.status(204).end();
     } catch(error) {
         next(error);

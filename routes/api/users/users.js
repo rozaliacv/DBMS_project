@@ -15,11 +15,11 @@ userRouter
     .route('/')
     .get(getAllUsers)
     .post(userValidator , async(req,res,next) => {
-        req.body.uid = uuid();
+        req.body.id = uuid();
         addNewUser(req,res,next);
     });
 userRouter
-    .route('/:uid')
+    .route('/id')
     .get(getUser)
     .patch(userValidator,updateUser)
     .put(userValidator,updateUser)
