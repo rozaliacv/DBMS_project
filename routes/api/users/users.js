@@ -6,7 +6,7 @@ import {
     addNewUser,
     updateUser,
     deleteUser
-} from "../../../contollers/users/userController.js";
+} from "../../../controllers/users/userController.js";
 
 import {v4 as uuid } from "uuid";
 import {userValidator} from "../../../middleware/users/userValidator.js";

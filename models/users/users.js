@@ -24,7 +24,7 @@ const add = async(userDetails) => {
 };
 
 const update = async(id,userDetails) => {
-    const {id , name , gender , email , address , phone , photo} = userDetails;
+    const {name , gender , email , address , phone , photo} = userDetails;
     const res = await query(
         `UPDATE  users 
         SET name = ?, gender =? , email =? , address = ?, phone = ? , photo = ?

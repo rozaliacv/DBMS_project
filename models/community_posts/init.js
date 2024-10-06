@@ -8,8 +8,8 @@ const createCommunityPostsTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS community_posts(
-            post_id  VARCHAR(36) PRIMARY KEY,
-            posted_by VARCHAR(36),
+            post_id  UUID PRIMARY KEY,
+            posted_by UUID,
             title INT,
             content TEXT,
             is_fulfilled BOOLEAN NOT NULL DEFAULT FALSE,

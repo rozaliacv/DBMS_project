@@ -8,9 +8,9 @@ const createServiceCommentsTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS service_comments(
-            comment_id  VARCHAR(36) PRIMARY KEY,
-            posted_by VARCHAR(36) ,
-            service_id VARCHAR(36) ,
+            comment_id  UUID PRIMARY KEY,
+            posted_by UUID ,
+            service_id UUID ,
             rating INT,
             comment TEXT,
             FOREIGN KEY (service_id) REFERENCES services(id),

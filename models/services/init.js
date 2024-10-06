@@ -8,10 +8,10 @@ const createServicesTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS services(
-            id  VARCHAR(36) PRIMARY KEY,
+            id  UUID PRIMARY KEY,
             name VARCHAR(32) NOT NULL,
-            type_id VARCHAR(36) ,
-            offered_by VARCHAR(36),
+            type_id UUID ,
+            offered_by UUID,
             is_available BOOLEAN NOT NULL,
             price FLOAT NOT NULL DEFAULT 0,
             FOREIGN KEY (type_id) REFERENCES service_types(type_id),

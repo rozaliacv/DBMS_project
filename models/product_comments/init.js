@@ -8,9 +8,9 @@ const createProductCommentsTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS product_comments(
-            comment_id  VARCHAR(36) PRIMARY KEY,
-            posted_by VARCHAR(36) NOT NULL,
-            product_id VARCHAR(36) NOT NULL,
+            comment_id  UUID PRIMARY KEY,
+            posted_by UUID ,
+            product_id UUID ,
             rating INT,
             comment TEXT,
             FOREIGN KEY (product_id) REFERENCES products(id),

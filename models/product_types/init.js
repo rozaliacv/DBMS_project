@@ -8,7 +8,7 @@ const createProductTypesTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS product_types(
-            type_id  VARCHAR(36) PRIMARY KEY,
+            type_id  UUID PRIMARY KEY,
             type_name VARCHAR(32) NOT NULL
             )`
         );

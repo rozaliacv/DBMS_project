@@ -8,8 +8,8 @@ const createProductImagesTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS product_images(
-            image_id  VARCHAR(36) PRIMARY KEY,
-            product_id VARCHAR(36) ,
+            image_id  UUID PRIMARY KEY,
+            product_id UUID ,
             path VARCHAR(256) NOT NULL,
             FOREIGN KEY (product_id) REFERENCES products(id)
             )`

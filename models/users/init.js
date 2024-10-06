@@ -8,7 +8,7 @@ const createUsersTable = async() => {
     try {
         await client.query(
             `CREATE TABLE IF NOT EXISTS users(
-            id  VARCHAR(36) PRIMARY KEY,
+            id  UUID PRIMARY KEY,
             name VARCHAR(52) NOT NULL,
             gender VARCHAR(10) ,
             email VARCHAR(52) NOT NULL,

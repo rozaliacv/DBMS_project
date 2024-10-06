@@ -6,11 +6,12 @@ const client = await pool.connect()
 
 
 export async function query(sql, params) {
+  const client = await pool.connect()
   try {
-    const [results] = await client.query(sql, params);
+    const results = await client.query(sql, params);
 
-    if (results.length > 0) {
-      return results;
+    if (results.rows.length > 0) {
+      return results.rows;
     } else {
       return [];
     }
