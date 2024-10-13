@@ -7,7 +7,7 @@ import {
     replaceService,
     deleteService,
     getServicebyType,
-} from "../../../controllers/services/serviceController.js";
+} from "../../../../controllers/services/serviceController.js";
 
 const serviceRouter = express.Router();
 
@@ -16,17 +16,17 @@ serviceRouter
     .get(getAllServices)
     .post(addService);
 serviceRouter
-    .route("/:id")
+    .route("/id/:id")
     .get(getService)
     .delete(deleteService)
     .put(replaceService)
     .patch(updateService)
     
 serviceRouter
-    .route("/:name")
+    .route("/name/:name")
     .get(getService);
 serviceRouter
-    .route("/:type")
+    .route("/type/:type")
     .get(getServicebyType);
 
 export default serviceRouter;
