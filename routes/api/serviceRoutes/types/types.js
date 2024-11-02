@@ -1,8 +1,8 @@
 import express from "express";
 import {
     getAllTypes,
-    getType,
-} from "../../../../controllers/product_types/product_typesController.js";
+    getType
+} from "../../../../controllers/service_types/service_typesController.js";
 
 const typesRouter = express.Router();
 

@@ -36,7 +36,7 @@ const getbyType = async(type_name) => {
     try{
         const fields = ["id","name","type_id","offered_by","is_available","price"];
         const values=[id,name,type_id,offered_by,is_available,price];
-        const placcholders = fields.map((_,index) => `$${index+1}`.join(", "));
+        const placcholders = fields.map((_,index) => `$${index+1}`).join(", ");
         const sql =`
         INSERT INTO services(${fields.join(", ")})
         VALUES (${placcholders})`;
